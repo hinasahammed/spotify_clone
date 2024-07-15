@@ -1,15 +1,17 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:spotify_clone/res/components/common/custom_button.dart';
 import 'package:spotify_clone/res/components/common/custom_textformfield.dart';
-import 'package:spotify_clone/view/createAccount/email/create_password.dart';
+import 'package:spotify_clone/view/createAccount/email/select_dob.dart';
 
-class CreateAccountWithEmail extends StatelessWidget {
-  const CreateAccountWithEmail({super.key});
+class CreatePassword extends StatelessWidget {
+  const CreatePassword({super.key});
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
@@ -22,30 +24,23 @@ class CreateAccountWithEmail extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "What's your email?",
+              "Create a password",
               style: theme.textTheme.headlineMedium!.copyWith(
                 color: theme.colorScheme.onSurface,
                 fontWeight: FontWeight.w600,
               ),
             ),
             const Gap(10),
-            const CustomTextformfield(),
-            const Gap(10),
-            Text(
-              "You will need to confirm this email later",
-              style: theme.textTheme.labelLarge!.copyWith(
-                color: theme.colorScheme.onSurface,
-              ),
+            const CustomTextformfield(
+              suffixIcon: Icon(Icons.visibility),
             ),
-            const Gap(20),
+            const Gap(50),
             Align(
               alignment: Alignment.center,
               child: CustomButton(
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (ctx) => const CreatePassword()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (ctx) => const SelectDob()));
                 },
                 backgroundColor: theme.colorScheme.onSurface,
                 textColor: theme.colorScheme.surface,

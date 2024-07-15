@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomTextformfield extends StatelessWidget {
-  const CustomTextformfield({super.key});
+  final Widget? suffixIcon;
+  const CustomTextformfield({super.key, this.suffixIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +14,7 @@ class CustomTextformfield extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
           borderSide: BorderSide.none,
         ),
+        suffixIcon: suffixIcon,
       ),
     );
   }

@@ -1,11 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:spotify_clone/res/components/common/custom_button.dart';
-import 'package:spotify_clone/res/components/common/custom_textformfield.dart';
-import 'package:spotify_clone/view/createAccount/email/create_password.dart';
+import 'package:spotify_clone/view/createAccount/email/select_gender.dart';
 
-class CreateAccountWithEmail extends StatelessWidget {
-  const CreateAccountWithEmail({super.key});
+class SelectDob extends StatelessWidget {
+  const SelectDob({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,22 +22,25 @@ class CreateAccountWithEmail extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "What's your email?",
+              "What's your date of birth?",
               style: theme.textTheme.headlineMedium!.copyWith(
                 color: theme.colorScheme.onSurface,
                 fontWeight: FontWeight.w600,
               ),
             ),
-            const Gap(10),
-            const CustomTextformfield(),
-            const Gap(10),
-            Text(
-              "You will need to confirm this email later",
-              style: theme.textTheme.labelLarge!.copyWith(
-                color: theme.colorScheme.onSurface,
+            const Gap(20),
+            SizedBox(
+              height: 220,
+              child: CupertinoDatePicker(
+                itemExtent: 90,
+                mode: CupertinoDatePickerMode.date,
+                initialDateTime: DateTime(2010),
+                minimumYear: 1900,
+                maximumYear: DateTime.now().year,
+                onDateTimeChanged: (DateTime newDateTime) {},
               ),
             ),
-            const Gap(20),
+            const Gap(50),
             Align(
               alignment: Alignment.center,
               child: CustomButton(
@@ -45,7 +48,7 @@ class CreateAccountWithEmail extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (ctx) => const CreatePassword()));
+                          builder: (ctx) => const SelectGender()));
                 },
                 backgroundColor: theme.colorScheme.onSurface,
                 textColor: theme.colorScheme.surface,
