@@ -16,7 +16,7 @@ class SetYourName extends StatelessWidget {
         centerTitle: true,
         title: const Text("Create account"),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

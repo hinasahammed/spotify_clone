@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:spotify_clone/view/tabBar/custom_tab_bar_view.dart';
 
 class SelectArtist extends StatefulWidget {
   const SelectArtist({super.key});
@@ -42,99 +43,121 @@ class _SelectArtistState extends State<SelectArtist> {
     final theme = Theme.of(context);
     return Scaffold(
       body: SafeArea(
-          child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            Text(
-              "Choose 3 or more artists you like.",
-              style: theme.textTheme.headlineMedium!.copyWith(
-                color: theme.colorScheme.onSurface,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const Gap(10),
-            TextField(
-              decoration: InputDecoration(
-                fillColor: theme.colorScheme.onSurface,
-                filled: true,
-                prefixIcon: Icon(
-                  Icons.search,
-                  color: theme.colorScheme.surface,
-                ),
-                border: const OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                ),
-                hintText: "Search",
-                hintStyle: theme.textTheme.bodyLarge!.copyWith(
-                  color: theme.colorScheme.surface,
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [
+              Text(
+                "Choose 3 or more artists you like.",
+                style: theme.textTheme.headlineMedium!.copyWith(
+                  color: theme.colorScheme.onSurface,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-            ),
-            const Gap(20),
-            SizedBox(
-              height: 40,
-              child: ListView.separated(
-                separatorBuilder: (context, index) => const Gap(10),
-                itemCount: 4,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    border: Border.all(
-                      color: theme.colorScheme.onSurface.withOpacity(.5),
-                    ),
-                    color: index == 0
-                        ? theme.colorScheme.primary
-                        : theme.colorScheme.surface,
+              const Gap(10),
+              TextField(
+                decoration: InputDecoration(
+                  fillColor: theme.colorScheme.onSurface,
+                  filled: true,
+                  prefixIcon: Icon(
+                    Icons.search,
+                    color: theme.colorScheme.surface,
                   ),
-                  child: Text(
-                    title[index],
-                    style: theme.textTheme.bodyLarge!.copyWith(
+                  border: const OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                  ),
+                  hintText: "Search",
+                  hintStyle: theme.textTheme.bodyLarge!.copyWith(
+                    color: theme.colorScheme.surface,
+                  ),
+                ),
+              ),
+              const Gap(20),
+              SizedBox(
+                height: 50,
+                child: ListView.separated(
+                  separatorBuilder: (context, index) => const Gap(10),
+                  itemCount: 4,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      border: Border.all(
+                        color: theme.colorScheme.onSurface.withOpacity(.5),
+                      ),
                       color: index == 0
-                          ? theme.colorScheme.onPrimary
-                          : theme.colorScheme.onSurface,
-                      fontWeight: FontWeight.w600,
+                          ? theme.colorScheme.primary
+                          : theme.colorScheme.surface,
+                    ),
+                    child: Text(
+                      title[index],
+                      style: theme.textTheme.bodyLarge!.copyWith(
+                        color: index == 0
+                            ? theme.colorScheme.onPrimary
+                            : theme.colorScheme.onSurface,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            const Gap(20),
-            Expanded(
-              child: GridView.builder(
-                itemCount: images.length,
-                shrinkWrap: true,
-                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 150,
-                  crossAxisSpacing: 5,
-                  mainAxisSpacing: 5,
-                  childAspectRatio: .7,
-                ),
-                itemBuilder: (context, index) => Column(
-                  children: [
-                    CircleAvatar(
-                      radius: 50,
-                      backgroundImage: NetworkImage(
-                        images[index],
+              const Gap(20),
+              Expanded(
+                child: GridView.builder(
+                  itemCount: images.length,
+                  shrinkWrap: true,
+                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 150,
+                    crossAxisSpacing: 5,
+                    mainAxisSpacing: 5,
+                    childAspectRatio: .6,
+                  ),
+                  itemBuilder: (context, index) => Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 50,
+                        backgroundImage: NetworkImage(
+                          images[index],
+                        ),
                       ),
-                    ),
-                    const Gap(10),
-                    Text(
-                      artistname[index],
-                      style: theme.textTheme.bodyLarge!.copyWith(
-                        color: theme.colorScheme.onSurface,
+                      const Gap(10),
+                      Text(
+                        artistname[index],
+                        style: theme.textTheme.bodyLarge!.copyWith(
+                          color: theme.colorScheme.onSurface,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
-                    )
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            )
-          ],
+              const Gap(50),
+            ],
+          ),
         ),
-      )),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: SizedBox(
+        width: 200,
+        child: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CustomTabBarView(),
+                ));
+          },
+          backgroundColor: theme.colorScheme.onSurface,
+          child: Text(
+            "Done",
+            style: theme.textTheme.bodyLarge!.copyWith(
+              color: theme.colorScheme.onPrimary,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

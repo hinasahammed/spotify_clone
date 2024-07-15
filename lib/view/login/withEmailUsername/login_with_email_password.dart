@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:spotify_clone/res/components/common/custom_button.dart';
 import 'package:spotify_clone/res/components/common/custom_textformfield.dart';
 import 'package:spotify_clone/view/login/withoutPassword/login_without_password.dart';
+import 'package:spotify_clone/view/tabBar/custom_tab_bar_view.dart';
 
 class LoginWithEmailPassword extends StatelessWidget {
   const LoginWithEmailPassword({super.key});
@@ -42,7 +43,13 @@ class LoginWithEmailPassword extends StatelessWidget {
             Align(
               alignment: Alignment.center,
               child: CustomButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const CustomTabBarView(),
+                      ));
+                },
                 backgroundColor: theme.colorScheme.onSurface,
                 textColor: theme.colorScheme.surface,
                 btnText: "Log in",
