@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:spotify_clone/assets/images/image_asset.dart';
+import 'package:spotify_clone/view/createAccount/email/select_artist.dart';
 
 class SelectMusicType extends StatefulWidget {
   const SelectMusicType({super.key});
@@ -75,29 +76,37 @@ class _SelectMusicTypeState extends State<SelectMusicType> {
                   crossAxisSpacing: 15,
                   childAspectRatio: 2,
                 ),
-                itemBuilder: (context, index) => Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: colors[index],
-                    image: DecorationImage(
-                      image: AssetImage(images[index]),
-                      alignment: Alignment.bottomRight,
-                      fit: BoxFit.fitHeight,
-                    ),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Gap(10),
-                      Text(
-                        lang[index],
-                        style: theme.textTheme.titleLarge!.copyWith(
-                          color: theme.colorScheme.onSurface,
-                          fontWeight: FontWeight.bold,
-                        ),
+                itemBuilder: (context, index) => InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (ctx) => const SelectArtist()));
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: colors[index],
+                      image: DecorationImage(
+                        image: AssetImage(images[index]),
+                        alignment: Alignment.bottomRight,
+                        fit: BoxFit.fitHeight,
                       ),
-                    ],
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Gap(10),
+                        Text(
+                          lang[index],
+                          style: theme.textTheme.titleLarge!.copyWith(
+                            color: theme.colorScheme.onSurface,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               )
