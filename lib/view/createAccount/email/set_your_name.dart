@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:spotify_clone/res/components/common/custom_button.dart';
 import 'package:spotify_clone/res/components/common/custom_textformfield.dart';
-import 'package:spotify_clone/view/createAccount/email/select_dob.dart';
+import 'package:spotify_clone/view/createAccount/email/select_music_type.dart';
 
 class SetYourName extends StatelessWidget {
   const SetYourName({super.key});
@@ -108,8 +108,10 @@ class SetYourName extends StatelessWidget {
               alignment: Alignment.center,
               child: CustomButton(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (ctx) => const SelectDob()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (ctx) => const SelectMusicType()));
                 },
                 backgroundColor: theme.colorScheme.onSurface,
                 textColor: theme.colorScheme.surface,
