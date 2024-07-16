@@ -130,7 +130,29 @@ class _HomeViewState extends State<HomeView> {
           const SizedBox(
             height: 160,
             child: FavouriteArtist(),
-          )
+          ),
+          Text(
+            "Popular albums",
+            style: theme.textTheme.headlineMedium!.copyWith(
+              color: theme.colorScheme.onSurface,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(
+            height: 310,
+            child: NewRelease(),
+          ),
+          Text(
+            "Best of artists",
+            style: theme.textTheme.headlineMedium!.copyWith(
+              color: theme.colorScheme.onSurface,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(
+            height: 310,
+            child: NewRelease(),
+          ),
         ],
       ),
     );
