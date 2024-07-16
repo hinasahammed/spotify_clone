@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:spotify_clone/view/home/home_view.dart';
+import 'package:spotify_clone/view/search/search_view.dart';
 
 class CustomTabBarView extends StatelessWidget {
   const CustomTabBarView({super.key});
@@ -9,7 +9,7 @@ class CustomTabBarView extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
-      body: const SafeArea(child: HomeView()),
+      body: const SafeArea(child: SearchView()),
       floatingActionButtonLocation:
           FloatingActionButtonLocation.miniCenterFloat,
       floatingActionButton: Container(
@@ -65,6 +65,9 @@ class CustomTabBarView extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: theme.colorScheme.onSurface,
+        unselectedItemColor: theme.colorScheme.onSurface.withOpacity(.5),
+        currentIndex: 1,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home_filled),
