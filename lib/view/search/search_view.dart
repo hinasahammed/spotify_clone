@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:spotify_clone/view/search/genres.dart';
+import 'package:spotify_clone/view/search/widgets/search_card.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
@@ -70,7 +71,8 @@ class SearchView extends StatelessWidget {
           const Gap(10),
           const SizedBox(height: 220, child: Genres()),
           const Gap(20),
-         
+          const SearchCard(),
+          const Gap(80),
         ],
       ),
     );
