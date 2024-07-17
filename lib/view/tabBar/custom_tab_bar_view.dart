@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:spotify_clone/view/home/home_view.dart';
+import 'package:spotify_clone/view/library/your_library.dart';
 import 'package:spotify_clone/view/search/search_view.dart';
 
 class CustomTabBarView extends StatefulWidget {
@@ -14,7 +15,7 @@ class _CustomTabBarViewState extends State<CustomTabBarView> {
   List pages = [
     const HomeView(),
     const SearchView(),
-    const SearchView(),
+    const YourLibrary(),
   ];
   int currentIndex = 0;
   @override
