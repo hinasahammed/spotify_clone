@@ -1,15 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:spotify_clone/view/home/home_view.dart';
 import 'package:spotify_clone/view/search/search_view.dart';
 
-class CustomTabBarView extends StatelessWidget {
+class CustomTabBarView extends StatefulWidget {
   const CustomTabBarView({super.key});
 
+  @override
+  State<CustomTabBarView> createState() => _CustomTabBarViewState();
+}
+
+class _CustomTabBarViewState extends State<CustomTabBarView> {
+  List pages = [
+    const HomeView(),
+    const SearchView(),
+    const SearchView(),
+  ];
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
-      body: const SafeArea(child: SearchView()),
+      body: SafeArea(child: pages[currentIndex]),
       floatingActionButtonLocation:
           FloatingActionButtonLocation.miniCenterFloat,
       floatingActionButton: Container(
@@ -67,7 +79,12 @@ class CustomTabBarView extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: theme.colorScheme.onSurface,
         unselectedItemColor: theme.colorScheme.onSurface.withOpacity(.5),
-        currentIndex: 1,
+        currentIndex: currentIndex,
+        onTap: (value) {
+          setState(() {
+            currentIndex = value;
+          });
+        },
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home_filled),

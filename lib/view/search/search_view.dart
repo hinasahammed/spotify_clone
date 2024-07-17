@@ -69,16 +69,8 @@ class SearchView extends StatelessWidget {
           ),
           const Gap(10),
           const SizedBox(height: 220, child: Genres()),
-          const Gap(10),
-          Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: theme.colorScheme.primaryContainer,
-            ),
-            child: Image.network(
-                "https://cms-fym.s3.nl-ams.scw.cloud/ox_Yn_AX_Da_R2_Cw_Rrnhv_Eal_515f388034.png"),
-          )
+          const Gap(20),
+         
         ],
       ),
     );
