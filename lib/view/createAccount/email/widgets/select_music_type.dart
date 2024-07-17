@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:spotify_clone/assets/images/image_asset.dart';
-import 'package:spotify_clone/view/createAccount/email/select_artist.dart';
+import 'package:spotify_clone/view/createAccount/email/widgets/select_artist.dart';
 
 class SelectMusicType extends StatefulWidget {
   const SelectMusicType({super.key});

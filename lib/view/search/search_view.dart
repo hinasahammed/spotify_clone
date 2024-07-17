@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:spotify_clone/view/search/genres.dart';
+import 'package:spotify_clone/view/search/widgets/genres.dart';
 import 'package:spotify_clone/view/search/widgets/search_card.dart';
 
 class SearchView extends StatelessWidget {

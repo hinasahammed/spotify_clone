@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:spotify_clone/res/components/common/custom_button.dart';
 import 'package:spotify_clone/res/components/common/custom_textformfield.dart';
-import 'package:spotify_clone/view/createAccount/email/create_password.dart';
+import 'package:spotify_clone/view/createAccount/email/widgets/create_password.dart';
 
 class CreateAccountWithEmail extends StatelessWidget {
   const CreateAccountWithEmail({super.key});

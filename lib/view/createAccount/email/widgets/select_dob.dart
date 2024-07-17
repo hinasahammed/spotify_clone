@@ -1,16 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:spotify_clone/res/components/common/custom_button.dart';
-import 'package:spotify_clone/res/components/common/custom_textformfield.dart';
-import 'package:spotify_clone/view/createAccount/email/select_dob.dart';
+import 'package:spotify_clone/view/createAccount/email/widgets/select_gender.dart';
 
-class CreatePassword extends StatelessWidget {
-  const CreatePassword({super.key});
+class SelectDob extends StatelessWidget {
+  const SelectDob({super.key});
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
@@ -23,23 +22,33 @@ class CreatePassword extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Create a password",
+              "What's your date of birth?",
               style: theme.textTheme.headlineMedium!.copyWith(
                 color: theme.colorScheme.onSurface,
                 fontWeight: FontWeight.w600,
               ),
             ),
-            const Gap(10),
-            const CustomTextformfield(
-              suffixIcon: Icon(Icons.visibility),
+            const Gap(20),
+            SizedBox(
+              height: 220,
+              child: CupertinoDatePicker(
+                itemExtent: 90,
+                mode: CupertinoDatePickerMode.date,
+                initialDateTime: DateTime(2010),
+                minimumYear: 1900,
+                maximumYear: DateTime.now().year,
+                onDateTimeChanged: (DateTime newDateTime) {},
+              ),
             ),
             const Gap(50),
             Align(
               alignment: Alignment.center,
               child: CustomButton(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (ctx) => const SelectDob()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (ctx) => const SelectGender()));
                 },
                 backgroundColor: theme.colorScheme.onSurface,
                 textColor: theme.colorScheme.surface,

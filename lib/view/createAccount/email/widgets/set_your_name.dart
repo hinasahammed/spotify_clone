@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:spotify_clone/res/components/common/custom_button.dart';
 import 'package:spotify_clone/res/components/common/custom_textformfield.dart';
-import 'package:spotify_clone/view/createAccount/email/select_music_type.dart';
+import 'package:spotify_clone/view/createAccount/email/widgets/select_music_type.dart';
 
 class SetYourName extends StatelessWidget {
   const SetYourName({super.key});

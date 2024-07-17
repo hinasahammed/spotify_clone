@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:spotify_clone/view/createAccount/email/set_your_name.dart';
+import 'package:spotify_clone/view/createAccount/email/widgets/set_your_name.dart';
 
 class SelectGender extends StatefulWidget {
   const SelectGender({super.key});
