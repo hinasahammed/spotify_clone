@@ -39,11 +39,14 @@ class LoginWithoutPassword extends StatelessWidget {
             const Gap(20),
             Align(
               alignment: Alignment.center,
-              child: CustomButton(
-                onPressed: () {},
-                backgroundColor: theme.colorScheme.onSurface,
-                textColor: theme.colorScheme.surface,
-                btnText: "Get link",
+              child: SizedBox(
+                height: 50,
+                child: CustomButton(
+                  onPressed: () {},
+                  backgroundColor: theme.colorScheme.onSurface,
+                  textColor: theme.colorScheme.surface,
+                  btnText: "Get link",
+                ),
               ),
             ),
           ],

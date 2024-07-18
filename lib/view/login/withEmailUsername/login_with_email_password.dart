@@ -42,17 +42,20 @@ class LoginWithEmailPassword extends StatelessWidget {
             const Gap(50),
             Align(
               alignment: Alignment.center,
-              child: CustomButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const CustomTabBarView(),
-                      ));
-                },
-                backgroundColor: theme.colorScheme.onSurface,
-                textColor: theme.colorScheme.surface,
-                btnText: "Log in",
+              child: SizedBox(
+                height: 50,
+                child: CustomButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const CustomTabBarView(),
+                        ));
+                  },
+                  backgroundColor: theme.colorScheme.onSurface,
+                  textColor: theme.colorScheme.surface,
+                  btnText: "Log in",
+                ),
               ),
             ),
             const Gap(50),
@@ -68,6 +71,7 @@ class LoginWithEmailPassword extends StatelessWidget {
                   );
                 },
                 child: Container(
+                  height: 40,
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),

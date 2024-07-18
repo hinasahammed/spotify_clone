@@ -43,16 +43,19 @@ class SelectDob extends StatelessWidget {
             const Gap(50),
             Align(
               alignment: Alignment.center,
-              child: CustomButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (ctx) => const SelectGender()));
-                },
-                backgroundColor: theme.colorScheme.onSurface,
-                textColor: theme.colorScheme.surface,
-                btnText: "Next",
+              child: SizedBox(
+                height: 50,
+                child: CustomButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (ctx) => const SelectGender()));
+                  },
+                  backgroundColor: theme.colorScheme.onSurface,
+                  textColor: theme.colorScheme.surface,
+                  btnText: "Next",
+                ),
               ),
             )
           ],

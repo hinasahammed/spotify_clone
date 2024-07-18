@@ -47,7 +47,7 @@ class _SelectGenderState extends State<SelectGender> {
                 crossAxisCount: 3,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
-                childAspectRatio: 2,
+                mainAxisExtent: 70,
               ),
               itemBuilder: (context, index) => InkWell(
                 onTap: () {

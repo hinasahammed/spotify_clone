@@ -40,16 +40,19 @@ class CreateAccountWithEmail extends StatelessWidget {
             const Gap(20),
             Align(
               alignment: Alignment.center,
-              child: CustomButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (ctx) => const CreatePassword()));
-                },
-                backgroundColor: theme.colorScheme.onSurface,
-                textColor: theme.colorScheme.surface,
-                btnText: "Next",
+              child: SizedBox(
+                height: 50,
+                child: CustomButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (ctx) => const CreatePassword()));
+                  },
+                  backgroundColor: theme.colorScheme.onSurface,
+                  textColor: theme.colorScheme.surface,
+                  btnText: "Next",
+                ),
               ),
             )
           ],

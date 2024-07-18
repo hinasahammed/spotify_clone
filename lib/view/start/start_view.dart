@@ -45,7 +45,7 @@ class StartView extends StatelessWidget {
               ),
               const Gap(50),
               SizedBox(
-                width: double.infinity,
+                height: 50,
                 child: CustomButton(
                   backgroundColor: theme.colorScheme.primary,
                   textColor: theme.colorScheme.onPrimary,
@@ -62,7 +62,7 @@ class StartView extends StatelessWidget {
               ),
               const Gap(10),
               SizedBox(
-                width: double.infinity,
+                height: 50,
                 child: CustomButton(
                   onPressed: () {
                     Navigator.push(
@@ -83,20 +83,20 @@ class StartView extends StatelessWidget {
               ),
               const Gap(10),
               SizedBox(
-                width: double.infinity,
+                height: 50,
                 child: CustomButton(
                   onPressed: () {},
                   btnText: "Continue with Google",
                   icon: Image.asset(
                     IconsAsset.google,
-                    width: 40,
-                    height: 40,
+                    // width: 50,
+                    // height: 50,
                   ),
                 ),
               ),
               const Gap(10),
               SizedBox(
-                width: double.infinity,
+                height: 50,
                 child: CustomButton(
                   onPressed: () {},
                   btnText: "Continue with Facebook",

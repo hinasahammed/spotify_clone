@@ -74,7 +74,7 @@ class _SelectMusicTypeState extends State<SelectMusicType> {
                   maxCrossAxisExtent: 200,
                   mainAxisSpacing: 15,
                   crossAxisSpacing: 15,
-                  childAspectRatio: 2,
+                  mainAxisExtent: 100,
                 ),
                 itemBuilder: (context, index) => InkWell(
                   onTap: () {
