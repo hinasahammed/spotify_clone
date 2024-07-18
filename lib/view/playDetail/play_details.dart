@@ -21,7 +21,7 @@ class PlayDetails extends StatelessWidget {
           fit: BoxFit.contain,
         ),
       ),
-      child: Padding(
+      child: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -121,7 +121,7 @@ class PlayDetails extends StatelessWidget {
             const Gap(20),
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
                 color: const Color.fromARGB(255, 44, 44, 44),

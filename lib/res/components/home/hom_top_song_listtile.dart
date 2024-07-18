@@ -31,18 +31,16 @@ class _HomTopSongListtileState extends State<HomTopSongListtile> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final size = MediaQuery.sizeOf(context);
-    final double itemHeight = (size.height - kToolbarHeight - 24) / 1.7;
-    final double itemWidth = size.width / 2;
+
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: tileImages.length,
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 200,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
-        childAspectRatio: itemHeight / itemWidth,
+        mainAxisExtent: 60,
       ),
       itemBuilder: (context, index) => Container(
         decoration: BoxDecoration(
