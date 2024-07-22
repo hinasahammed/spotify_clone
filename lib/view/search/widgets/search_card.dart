@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_clone/assets/images/image_asset.dart';
 
 class SearchCard extends StatelessWidget {
   const SearchCard({super.key});
@@ -21,7 +22,7 @@ class SearchCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
             image: const DecorationImage(
               image: AssetImage(
-                "assets/images/searchCard.png",
+                ImageAsset.searchCard,
               ),
               fit: BoxFit.cover,
             )),

@@ -9,4 +9,5 @@ class ImageAsset {
   static const String vaishali = "assets/images/vaishali.png";
   static const String vijay = "assets/images/vijay.png";
   static const String vineeth = "assets/images/vineeth.png";
+  static const String searchCard = "assets/images/searchCard.png";
 }
